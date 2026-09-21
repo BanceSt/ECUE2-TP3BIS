@@ -8,4 +8,16 @@ public class Playlist {
     public Playlist(String nom) {
         this.nom = nom;
     }
+
+    public boolean ajout(Morceau morceau) {
+        if (morceau == null) return false;
+        if (nMorceaux >= 20 ) return false;
+        for (int i =0; i < nMorceaux;i++)
+        {
+            if (morceau.equals(morceaux[i])) return false;
+        }
+        morceaux[nMorceaux] = morceau;
+        nMorceaux++;
+        return true;
+    }
 }
