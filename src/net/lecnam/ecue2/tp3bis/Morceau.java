@@ -15,4 +15,13 @@ public class Morceau {
     public Morceau(String titre, String artist, int minutes, int secondes) {
         this(titre, artist, new Duree(minutes, secondes));
     }
+
+    public void ecouter()
+    {
+        nEcoute++;
+    }
+
+    public boolean estDe(String artiste) {
+        return artist.equals(artiste);
+    }
 }
