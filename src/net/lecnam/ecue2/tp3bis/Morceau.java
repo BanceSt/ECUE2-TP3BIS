@@ -24,4 +24,17 @@ public class Morceau {
     public boolean estDe(String artiste) {
         return artist.equals(artiste);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if ((obj == null) || getClass() != obj.getClass()) return false;
+        Morceau morceau = (Morceau) obj;
+        return (titre.equals(morceau.titre)) && (artist.equals(morceau.artist));
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s - %s (%s) - %d écoute(s)", titre, artist, duree, nEcoute);
+    }
 }
